@@ -1,4 +1,4 @@
-package algorithm.sort;
+package algorithm.microsoft.beauty.of.programming.chapter2;
 /*
  * 2.13 子数组的最大乘积:
  * 给定一个长度为N的数组，只许用乘法，不许用除法，计算任意（N-1）个数的组合中乘积最大的一个组，

@@ -29,6 +29,7 @@ public class Tango {
 			System.out.println("Tango["+i+"] : "+tango[i]);
 		}
 	}
+	//寻找出现次数最多的一个元素
 	public static int getTangoID(int[] array){
 		int candidate = array[0];
 		int nTimes = 1;
@@ -46,6 +47,7 @@ public class Tango {
 		}
 		return candidate;
 	}
+	//寻找出现次数最多的三个元素
 	public static int[] get3TangoID(int[] array){
 		if(array.length < 3){
 			return null;
