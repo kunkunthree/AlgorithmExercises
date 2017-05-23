@@ -10,11 +10,12 @@ public class MakeTitleToClassName {
 		String s;
 		while(in.hasNext()){
 			s = in.nextLine();
+			if(s == null || s.length() == 0)continue;
 			System.out.println(getClassName(s));
 		}
 	}
 	public static String getClassName(String s){
-		String[] str = s.split(" ");
+		String[] str = s.trim().split(" ");
 		StringBuilder result = new StringBuilder("NO");
 //		System.out.println(Arrays.toString(str[0].split("\\.")));
 		str[0] = str[0].split("\\.")[0];

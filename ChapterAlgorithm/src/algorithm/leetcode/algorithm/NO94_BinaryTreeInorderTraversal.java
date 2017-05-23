@@ -33,6 +33,8 @@ public class NO94_BinaryTreeInorderTraversal {
 		stack.push(4);
 		System.out.println(stack);
 	}
+	//方法1：
+	//中序遍历，中根遍历，递归形式
 	public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<Integer>();
         if(root == null){

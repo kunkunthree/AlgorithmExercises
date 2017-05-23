@@ -17,6 +17,8 @@ public class MergingSort {
 		System.out.println("排序后：");
 		System.out.println(Arrays.toString(array));
 	}
+	//方法1：
+	//归并排序
 	public static void Merge(int[] array,int index,int m,int n){
 		int start = index;
 		int[] tmpArray = new int[n-start+1];
@@ -39,12 +41,12 @@ public class MergingSort {
 		}
 	}
 	public static void MSort(int[] array,int start,int end){
-		int[] tmpArray = new int[end-start+1];
-		for(int i = 0 ; i < tmpArray.length ; i++){
-			tmpArray[i] = array[i+start];
-		}
+//		int[] tmpArray = new int[end-start+1];
+//		for(int i = 0 ; i < tmpArray.length ; i++){
+//			tmpArray[i] = array[i+start];
+//		}
 		if(start == end){
-			array[start] = tmpArray[0];
+//			array[start] = tmpArray[0];
 		}else{
 			int m = (start+end)/2;
 			MSort(array,start,m);

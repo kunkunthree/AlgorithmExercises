@@ -1,5 +1,5 @@
 package algorithm.leetcode.algorithm;
-
+import java.util.*;
 public class TreeNode {
 	int val;
 	TreeNode left;
@@ -26,5 +26,35 @@ public class TreeNode {
 			}
 		}
 		return tree[0];
+	}
+	@Override
+	public String toString() {
+		int level = getLevel(this);
+		TreeNode[] nodes = new TreeNode[(int)(Math.pow(2, level))];
+		nodes[1] = this;
+		StringBuilder sb = new StringBuilder("[");
+		for(int i = 1 ; i <= nodes.length-1 ; i++){
+			if(nodes[i] != null){
+				sb.append(nodes[i].val);
+				if(i < nodes.length-1)sb.append(",");
+				if(nodes[i].left != null){
+					nodes[2*i] = nodes[i].left;
+				}
+				if(nodes[i].right != null){
+					nodes[2*i+1] = nodes[i].right;
+				}
+			}else{
+				sb.append("null");
+				if(i < nodes.length-1)sb.append(",");
+			}
+		}
+		sb.append("]");
+		return sb.toString();
+	}
+	public static int getLevel(TreeNode root){
+		if(root == null){
+			return 0;
+		}
+		return 1 + Math.max(getLevel(root.left), getLevel(root.right));
 	}
 }

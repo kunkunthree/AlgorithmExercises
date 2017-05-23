@@ -1,4 +1,4 @@
-package algorithm.microsoft.beauty.of.programming.chapter2;
+package algorithm.leetcode.algorithm;
 /*
  * easy
  * 66. Plus One 

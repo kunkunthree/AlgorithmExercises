@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.leetcode.algorithm;
 /*
  * medium
  * 50. Pow(x, n)
