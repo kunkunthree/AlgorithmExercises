@@ -1,9 +1,9 @@
 package algorithm.leetcode.algorithm;
 import java.util.*;
 public class TreeNode {
-	int val;
-	TreeNode left;
-	TreeNode right;
+	public int val;
+	public TreeNode left;
+	public TreeNode right;
 	TreeNode(int x) { val = x; }
 	public static TreeNode getTree(Object[] x){
 		if(x == null || x.length == 0 || x[0] == null){

@@ -52,4 +52,26 @@ public class NO144_BinaryTreePreorderTraversal {
         }
         return list;
     }
+    //方法3：
+  //迭代
+    public List<Integer> preorderTraversal3(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        if(root == null){
+            return list;
+        }
+        TreeNode cur = null;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty()){
+            cur = stack.pop();
+            list.add(cur.val);
+            if(cur.right != null){
+                stack.push(cur.right);
+            }
+            if(cur.left != null){
+                stack.push(cur.left);
+            }
+        }
+        return list;
+    }
 }

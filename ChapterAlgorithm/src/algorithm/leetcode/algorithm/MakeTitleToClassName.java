@@ -21,6 +21,8 @@ public class MakeTitleToClassName {
 		str[0] = str[0].split("\\.")[0];
 		result.append(str[0]+"_");
 		for(int i = 1 ; i < str.length ; i++){
+			char head = Character.toUpperCase(str[i].charAt(0));
+			str[i] = head+str[i].replace('-', '_').substring(1);
 			result.append(str[i]);
 		}
 		return result.toString();

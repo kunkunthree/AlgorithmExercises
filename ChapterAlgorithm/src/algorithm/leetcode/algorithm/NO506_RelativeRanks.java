@@ -20,15 +20,15 @@ Note:
 
  */
 import java.util.*;
-class Point{
-    int index;
-    int val;
-    public Point(int i,int v){
-        index = i;
-        val =v;
-    }
-}
 public class NO506_RelativeRanks {
+		class Point{
+			int index;
+			int val;
+			public Point(int i,int v){
+				index = i;
+				val =v;
+			}
+		}
 	public static void main(String[] args) {
 		
 	}

@@ -55,7 +55,7 @@ public class NO221_MaximalSquare {
         return max*max;
     }
 	//方法2：
-	//一个变长为n的正方形，可以看做是三个边长为n-1的正方形(左边，上边，左上角)加上一个边长为1的的正方形重叠构成
+	//一个边长为n的正方形，可以看做是三个边长为n-1的正方形(左边，上边，左上角)加上一个边长为1的的正方形重叠构成
 	public int maximalSquare2(char[][] matrix) {
         if(matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0){
             return 0;
