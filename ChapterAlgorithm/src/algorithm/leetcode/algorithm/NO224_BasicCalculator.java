@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.leetcode.algorithm;
 /*
  * hard
  * 224. Basic Calculator 
