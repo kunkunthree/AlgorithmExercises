@@ -10,6 +10,11 @@ For example:
 Given "aacecaaa", return "aaacecaaa".
 
 Given "abcd", return "dcbabcd".
+
+similar problems:
+5. Longest Palindromic Substring 
+336. Palindrome Pairs 
+28. Implement strStr() 
  */
 public class NO214_ShortestPalindrome {
 	public static void main(String[] args) {

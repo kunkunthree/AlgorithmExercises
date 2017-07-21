@@ -9,6 +9,10 @@ package algorithm.leetcode.algorithm;
 Find the minimum element.
 
 You may assume no duplicate exists in the array.
+
+similar problems:
+33. Search in Rotated Sorted Array 
+154. Find Minimum in Rotated Sorted Array II 
  */
 public class NO153_FindMinimuminRotatedSortedArray {
 	//方法1：

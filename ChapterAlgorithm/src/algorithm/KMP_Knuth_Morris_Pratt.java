@@ -51,7 +51,12 @@ next数组计算
 
  */
 public class KMP_Knuth_Morris_Pratt {
-    public int[] getNext(String b)  
+	public static void main(String[] args) {
+		String original = "12312312345234";
+		String find = "23";
+		search(original, find, getNext(original));
+	}
+    public static int[] getNext(String b)  
     {  
         int len=b.length();  
         int j=0;  
@@ -68,7 +73,7 @@ public class KMP_Knuth_Morris_Pratt {
               
         return next;  
     }  
-    public void search(String original, String find, int next[]) {  
+    public static void search(String original, String find, int next[]) {  
         int j = 0;  
         for (int i = 0; i < original.length(); i++) {  
             while (j > 0 && original.charAt(i) != find.charAt(j))  
@@ -76,7 +81,7 @@ public class KMP_Knuth_Morris_Pratt {
             if (original.charAt(i) == find.charAt(j))  
                 j++;  
             if (j == find.length()) {  
-                System.out.println("find at position " + (i - j));  
+                System.out.println("find at position " + (i - j + 1));  
                 System.out.println(original.subSequence(i - j + 1, i + 1));  
                 j = next[j];  
             }  

@@ -3,6 +3,9 @@ package algorithm.leetcode.algorithm;
  * medium
  * 147. Insertion Sort List
  * Sort a linked list using insertion sort.
+ * 
+ * similar problems:
+ * 148. Sort List 
  */
 public class NO147_InsertionSortList {
 	//方法1：

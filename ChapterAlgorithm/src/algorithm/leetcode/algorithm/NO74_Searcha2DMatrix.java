@@ -18,6 +18,9 @@ Consider the following matrix:
 ]
 
 Given target = 3, return true.
+
+similar problems:
+240. Search a 2D Matrix II 
  */
 public class NO74_Searcha2DMatrix {
 	public static void main(String[] args) {

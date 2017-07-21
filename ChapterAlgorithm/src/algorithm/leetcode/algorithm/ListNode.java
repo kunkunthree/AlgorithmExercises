@@ -1,9 +1,9 @@
 package algorithm.leetcode.algorithm;
 
 public class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
+	public int val;
+    public ListNode next;
+    public ListNode(int x) { val = x; }
     public static ListNode getList(int...x){
     	if(x == null || x.length == 0){
     		return null;

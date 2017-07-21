@@ -17,6 +17,9 @@ Given this linked list: 1->2->3->4->5
 For k = 2, you should return: 2->1->4->3->5
 
 For k = 3, you should return: 3->2->1->4->5 
+
+similar problems:
+24. Swap Nodes in Pairs 
  */
 public class NO25_ReverseNodesInK_Group {
 	public static void main(String[] args) {
@@ -112,7 +115,7 @@ public class NO25_ReverseNodesInK_Group {
             count++;
         }
         if (count == k) { // if k+1 node is found
-            curr = reverseKGroup(curr, k); // reverse list with k+1 node as head
+            curr = reverseKGroup3(curr, k); // reverse list with k+1 node as head
             // head - head-pointer to direct part, 
             // curr - head-pointer to reversed part;
             while (count-- > 0) { // reverse current k-group: 

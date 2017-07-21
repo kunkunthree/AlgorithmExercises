@@ -20,6 +20,11 @@ Here are the non-negative integers <= 5 with their corresponding binary represen
 Among them, only integer 3 disobeys the rule (two consecutive ones) and the other 5 satisfy the rule. 
 
 Note: 1 <= n <= 109 
+
+similar problems:
+198. House Robber 
+213. House Robber II 
+474. Ones and Zeroes 
  */
 public class NO600_Non_negativeIntegersWithoutConsecutiveOnes {
 	//方法1：
@@ -36,7 +41,7 @@ public class NO600_Non_negativeIntegersWithoutConsecutiveOnes {
 	//最后对该二进制字符串进行遍历，从n-2~0，
 	//1.如果遇到sb.charAt(i) == '1' && sb.charAt(i+1) == '1' 即遇到11，则说明后面的范围都已经都包含了，
 	//		所以不用继续遍历
-	//2.如果遇到sb.charAt(i) == '1' && sb.charAt(i+1) == '1' 即遇到00，则说明最后结果多算了01（低位为1）的情况，
+	//2.如果遇到sb.charAt(i) == '0' && sb.charAt(i+1) == '0' 即遇到00，则说明最后结果多算了01（低位为1）的情况，
 	//		所以需要减去endWithOne[i]
 	//3.如果遇到01或者10，则低位的0和1都包括，所以直接跳过进入下一位遍历
 	public int findIntegers(int num) {

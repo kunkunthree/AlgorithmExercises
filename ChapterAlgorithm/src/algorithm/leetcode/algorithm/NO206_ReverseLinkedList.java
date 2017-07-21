@@ -3,6 +3,10 @@ package algorithm.leetcode.algorithm;
  * easy
  * 206. Reverse Linked List 
  * Reverse a singly linked list.
+ * 
+ * similar problems:
+ * 92. Reverse Linked List II 
+ * 234. Palindrome Linked List 
  */
 public class NO206_ReverseLinkedList {
     public ListNode reverseList(ListNode head) {

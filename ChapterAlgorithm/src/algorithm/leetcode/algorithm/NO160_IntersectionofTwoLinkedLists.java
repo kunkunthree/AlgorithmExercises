@@ -20,12 +20,14 @@ Notes:
     You may assume there are no cycles anywhere in the entire linked structure.
     Your code should preferably run in O(n) time and use only O(1) memory.
 
+similar problems:
+599. Minimum Index Sum of Two Lists 
  */
 public class NO160_IntersectionofTwoLinkedLists {
 	//算法的空间复杂度O(1)，时间复杂度O(m+n)
 	//我们定义节点的距离为节点到链表开始所经过的节点数。
 	//如果两个链表长度相同，则相交节点其在两个链表上的距离一定相等。
-	//对于长度不同的两个链表，我们可以采用对齐的方式，使其向长度短的链表对齐。
+	//对于长度不同的两个链表599. Minimum Index Sum of Two Lists ，我们可以采用对齐的方式，使其向长度短的链表对齐。
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int lenA = getLength(headA);
         int lenB = getLength(headB);
@@ -55,6 +57,7 @@ public class NO160_IntersectionofTwoLinkedLists {
         }
         return i;
     }
+    //方法2：
     //还有更优的办法，不需要知道两个链表的长度，只需要让两个指针遍历a+b+c个节点就可以
     //假设c是单向链表A和B公共链的部分的长度，那么a是属于链表A而不属于链表B的长度，
     //b是是属于链表B而不属于链表A的长度，那么让指针1从a头部开始遍历，指针2从b头部开始遍历

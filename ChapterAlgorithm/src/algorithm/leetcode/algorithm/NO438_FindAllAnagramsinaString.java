@@ -28,13 +28,17 @@ The substring with start index = 0 is "ab", which is an anagram of "ab".
 The substring with start index = 1 is "ba", which is an anagram of "ab".
 The substring with start index = 2 is "ab", which is an anagram of "ab".
 
+similar problems:
+242. Valid Anagram 
+567. Permutation in String 
  */
 import java.util.*;
 public class NO438_FindAllAnagramsinaString {
 	public static void main(String[] args) {
 		
 	}
-	//迭代计数法
+	//方法1：
+	//迭代计数法，O(nk)time,O(k)space
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> list = new ArrayList<Integer>();
         if(s == null || s.length() < p.length()){

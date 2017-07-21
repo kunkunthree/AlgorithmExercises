@@ -8,6 +8,11 @@ package algorithm.leetcode.algorithm;
  * Example:
  * Given input array nums = [3,2,2,3], val = 3
  * Your function should return length = 2, with the first two elements of nums being 2.
+ * 
+ * similar problems:
+ * 26. Remove Duplicates from Sorted Array 
+ * 283. Move Zeroes 
+ * 203. Remove Linked List Elements 
  */
 import java.util.*;
 public class NO27_RemoveElement {
@@ -23,6 +28,9 @@ public class NO27_RemoveElement {
 			System.out.println(removeElement(array, val));
 		}
 	}
+	//方法1：
+	//迭代，用两个指针分别指向头和尾，向中间靠拢
+	//把尾部遇到的不等于val的值设置到头部指针所指向的等于val的值
     public static  int removeElement(int[] nums, int val) {
             int length = nums.length;
             int count = 0,left = 0,right = length-1;
@@ -46,6 +54,7 @@ public class NO27_RemoveElement {
 		}
 		return count;
 	}
+    //方法2：
     //简洁写法
     public int removeElement2(int[] A, int elem) {
         int len = A.length;

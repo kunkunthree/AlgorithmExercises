@@ -6,6 +6,9 @@ package algorithm.leetcode.algorithm;
 For example,
 Given 1->1->2, return 1->2.
 Given 1->1->2->3->3, return 1->2->3. 
+
+similar problems:
+82. Remove Duplicates from Sorted List II 
  */
 public class NO83_RemoveDuplicatesfromSortedList {
     public ListNode deleteDuplicates(ListNode head) {

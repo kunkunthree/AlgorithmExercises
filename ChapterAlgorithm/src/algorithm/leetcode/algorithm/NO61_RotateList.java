@@ -8,7 +8,8 @@ For example:
 Given 1->2->3->4->5->NULL and k = 2,
 return 4->5->1->2->3->NULL.
 
-
+similar problems:
+189. Rotate Array 
  */
 public class NO61_RotateList {
 	public static void main(String[] args) {

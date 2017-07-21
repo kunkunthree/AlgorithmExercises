@@ -8,6 +8,9 @@ package algorithm.leetcode.algorithm;
 For "(()", the longest valid parentheses substring is "()", which has length = 2.
 
 Another example is ")()())", where the longest valid parentheses substring is "()()", which has length = 4. 
+
+similar problems:
+20. Valid Parentheses 
  */
 import java.util.*;
 public class NO32_LongestValidParentheses {

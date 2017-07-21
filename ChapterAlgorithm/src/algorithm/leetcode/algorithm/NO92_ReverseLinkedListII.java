@@ -12,6 +12,9 @@ return 1->4->3->2->5->NULL.
 Note:
 Given m, n satisfy the following condition:
 1 ≤ m ≤ n ≤ length of list. 
+
+similar problems:
+206. Reverse Linked List 
  */
 public class NO92_ReverseLinkedListII {
 	public static void main(String[] args) {
@@ -19,6 +22,7 @@ public class NO92_ReverseLinkedListII {
 		int m = 1,n = 2;
 		System.out.println(reverseBetween(head, m, n));
 	}
+	//方法1：
 	public static ListNode reverseBetween(ListNode head, int m, int n) {
         if(m == n){
             return head;

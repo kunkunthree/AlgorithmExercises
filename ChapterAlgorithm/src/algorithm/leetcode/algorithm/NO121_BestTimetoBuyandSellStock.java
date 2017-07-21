@@ -15,6 +15,12 @@ Input: [7, 6, 4, 3, 1]
 Output: 0
 In this case, no transaction is done, i.e. max profit = 0.
 
+similar problems:
+53. Maximum Subarray 
+122. Best Time to Buy and Sell Stock II 
+123. Best Time to Buy and Sell Stock III 
+188. Best Time to Buy and Sell Stock IV 
+309. Best Time to Buy and Sell Stock with Cooldown 
  */
 public class NO121_BestTimetoBuyandSellStock {
     public int maxProfit(int[] prices) {

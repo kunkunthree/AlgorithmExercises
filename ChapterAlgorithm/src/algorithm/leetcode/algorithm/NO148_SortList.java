@@ -9,6 +9,8 @@ public class NO148_SortList {
 		ListNode head = ListNode.getList(4,3,2,1);
 		System.out.println(sortList(head));
 	}
+	//方法1：
+	//归并排序，不改变节点的值，改变节点的顺序
 	public static ListNode sortList(ListNode head) {
         if(head == null || head.next == null){
             return head;
@@ -42,4 +44,41 @@ public class NO148_SortList {
         }
         return head.next;
     }
+    //方法2：
+    //快速排序：不改变节点的结构，改变节点的值
+    public static ListNode sortList2(ListNode head) {
+    	quickSortSLL(head,null);
+    	return head;
+    }
+    public static void quickSortSLL(ListNode head,ListNode tail){
+		if(head != tail){
+			ListNode separator = getSeparator(head, tail);
+			quickSortSLL(head, separator);
+			quickSortSLL(separator.next, tail);
+		}
+	}
+	private static ListNode getSeparator(ListNode head,ListNode tail){
+		if(head == null){
+			return head;
+		}
+		ListNode left = head;
+		ListNode right = head.next;
+		int key = left.val;
+		while(right != null){
+			if(right.val < key){
+				left = left.next;
+				swap(left,right);
+			}
+			right = right.next;
+		}
+		swap(left,head);
+		return left;
+	}
+	private static void swap(ListNode node1 , ListNode node2){
+		if(node1 != null && node2 != null){
+			int tmp = node1.val;
+			node1.val = node2.val;
+			node2.val = tmp;
+		}
+	}
 }

@@ -15,6 +15,9 @@ Restrictions:
     The string consists of lower English letters only.
     Length of the given string and k will in the range [1, 10000]
 
+similar problems:
+344. Reverse String 
+557. Reverse Words in a String III 
  */
 public class NO541_ReverseStringII {
 	//按照最终结果的顺序访问字符

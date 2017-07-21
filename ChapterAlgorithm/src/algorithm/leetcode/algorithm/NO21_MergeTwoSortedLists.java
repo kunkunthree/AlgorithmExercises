@@ -4,8 +4,16 @@ package algorithm.leetcode.algorithm;
  * 21. Merge Two Sorted Lists 
  * Merge two sorted linked lists and return it as a new list. 
  * The new list should be made by splicing together the nodes of the first two lists.
+ * 
+ * similar problems：
+ * 23. Merge k Sorted Lists 
+ * 88. Merge Sorted Array
+ * 148. Sort List 
  */
 public class NO21_MergeTwoSortedLists {
+	//方法1：
+	//用两个指针分别指向两个链表，
+	//值小的指针指向的节点的next指向值大的指针指向的节点，值小的指针指向原来节点的next
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(Integer.MIN_VALUE);
         ListNode min = head;

@@ -15,6 +15,10 @@ Given the following binary tree,
   5       4       <---
 
 You should return [1, 3, 4]. 
+
+similar problems:
+116. Populating Next Right Pointers in Each Node 
+
  */
 import java.util.*;
 public class NO199_BinaryTreeRightSideView {

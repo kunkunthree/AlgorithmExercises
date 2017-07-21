@@ -13,6 +13,9 @@ For example,
   [2,1,1]
 ]
 
+similar problems:
+31. Next Permutation 
+ 46. Permutations
  */
 import java.util.*;
 public class NO47_PermutationsII {
@@ -92,6 +95,66 @@ public class NO47_PermutationsII {
             moveTo(nums,i,start);			//
             perm(nums,ll,start+1,end);
             moveTo(nums,start,i);
+        }
+    }
+    
+    //方法3：
+    //迭代
+    //先对数组从小到大排序，然后一个一个地求按照字典序的下一个数组，直到数组是逆序排序
+    //参考	31. Next Permutation 
+    public List<List<Integer>> permuteUnique3(int[] nums) {
+        List<Integer> list = new ArrayList<>();
+        for(int num : nums){
+            list.add(num);
+        }
+        Collections.sort(list);
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        result.add(new ArrayList<>(list));
+        while(true){
+            int i = nextPermutation(list,result);
+            if(i == 0){	//逆序
+                break;
+            }
+            result.add(new ArrayList<>(list));
+        }
+        return result;
+    }
+    //求下一个字典序的数组，并返回从后往前第一个比上一个数值大的下标
+    //当数组从大到小排序时，返回的是0
+    public int nextPermutation(List<Integer> list,List<List<Integer>> result) {
+        int i = list.size()-1;
+        while(i>0){
+            if(list.get(i-1) < list.get(i)){
+                break;
+            }
+            i--;
+        }
+        if(i > 0){
+            swap(list,i-1);
+        }
+        reverse(list,i);
+        return i;
+    }
+    private void swap(List<Integer> list,int i){
+        int right = list.size()-1;
+        while(i >= 0 && i < right){
+            if(list.get(i) < list.get(right)){
+                int tmp = list.get(i);
+                list.set(i,list.get(right));
+                list.set(right,tmp);
+                break;
+            }
+            right--;
+        }
+    }
+    private void reverse(List<Integer> list,int i){
+        int left = i,right = list.size()-1;
+        while(left >= 0 && left < right){
+            int tmp = list.get(left);
+            list.set(left,list.get(right));
+            list.set(right,tmp);
+            left++;
+            right--;
         }
     }
 }

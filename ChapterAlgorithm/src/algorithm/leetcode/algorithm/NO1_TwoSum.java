@@ -8,6 +8,9 @@ Example:
 Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
+
+similar problems:
+
  */
 import java.util.*;
 
@@ -21,9 +24,11 @@ public class NO1_TwoSum {
 		for(int i = 0 ; i < n ; i++){
 			nums[i] = in.nextInt();
 		}
-		System.out.println(Arrays.toString(twoSum(nums, target)));
+		System.out.println(Arrays.toString(twoSum2(nums, target)));
 	}
-	//O(n^2)
+	//方法1：
+	//O(n^2)time，O(1)space
+	//两重循环
     public static int[] twoSum(int[] nums, int target) {
         int length = nums.length;
         for(int i = 0 ; i < length-1 ; i++){
@@ -35,17 +40,21 @@ public class NO1_TwoSum {
         }
         return null;
     }
-  //O(n)
-    public static int[] twoSum2(int[] numbers, int target) {
+    
+    //方法2
+    //O(n)time，O(n)space
+    //用一个map记录值对应的下标
+    public static int[] twoSum2(int[] nums, int target) {
+    	int length = nums.length;
         int[] result = new int[2];
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for (int i = 0; i < numbers.length; i++) {
-            if (map.containsKey(target - numbers[i])) {
-                result[1] = i + 1;
-                result[0] = map.get(target - numbers[i]);
-                return result;
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int i = 0 ; i < length ; i++){
+            if(map.containsKey(target-nums[i])){
+                result[1] = i;
+                result[0] = map.get(target-nums[i]);
+                break;
             }
-            map.put(numbers[i], i + 1);
+            map.put(nums[i],i);
         }
         return result;
     }

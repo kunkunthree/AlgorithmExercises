@@ -8,6 +8,10 @@ Note: Do not modify the linked list.
 
 Follow up:
 Can you solve it without using extra space? 
+
+similar problems：
+141. Linked List Cycle 
+287. Find the Duplicate Number 
  */
 public class NO142_LinkedListCycleII {
 	public static void main(String[] args) {

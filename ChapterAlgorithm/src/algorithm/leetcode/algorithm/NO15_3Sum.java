@@ -14,6 +14,10 @@ A solution set is:
   [-1, -1, 2]
 ]
 
+similar problems:
+1. Two Sum 
+16. 3Sum Closest 
+18. 4Sum 
  */
 import java.util.*;
 public class NO15_3Sum {

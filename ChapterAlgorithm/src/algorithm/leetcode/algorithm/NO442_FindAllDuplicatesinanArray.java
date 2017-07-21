@@ -14,6 +14,9 @@ Input:
 Output:
 [2,3]
 
+similar problems:
+287. Find the Duplicate Number 
+448. Find All Numbers Disappeared in an Array 
  */
 import java.util.*;
 public class NO442_FindAllDuplicatesinanArray {

@@ -9,6 +9,11 @@ Given [1,2,0] return 3,
 and [3,4,-1,1] return 2.
 
 Your algorithm should run in O(n) time and uses constant space. 
+
+siimilar problems:
+268. Missing Number 
+287. Find the Duplicate Number
+448. Find All Numbers Disappeared in an Array  
  */
 public class NO41_FirstMissingPositive {
 	public static void main(String[] args) {

@@ -12,7 +12,7 @@ Given {1,2,3,4}, reorder it to {1,4,2,3}.
  */
 public class NO143_ReorderList {
 	public static void main(String[] args) {
-		ListNode head = ListNode.getList(1,2);
+		ListNode head = ListNode.getList(1,2,3,4);
 		reorderList(head);
 	}
 	//方法1：

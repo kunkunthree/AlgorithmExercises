@@ -14,6 +14,11 @@ Here are some examples. Inputs are in the left-hand column and its corresponding
 1,2,3 → 1,3,2
 3,2,1 → 1,2,3
 1,1,5 → 1,5,1
+
+similar problems:
+ 46. Permutations
+47. Permutations II 
+60. Permutation Sequence
  */
 public class NO31_NextPermutation {
 	public static void main(String[] args) {

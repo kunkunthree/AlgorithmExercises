@@ -15,6 +15,9 @@ then 3 steps to the last index.)
 
 Note:
 You can assume that you can always reach the last index.
+
+similar problems:
+55. Jump Game 
  */
 public class NO45_JumpGameII {
 	//方法1：

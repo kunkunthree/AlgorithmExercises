@@ -15,6 +15,11 @@ prices = [1, 2, 3, 0, 2]
 maxProfit = 3
 transactions = [buy, sell, cooldown, buy, sell]
 
+similar problems:
+121. Best Time to Buy and Sell Stock 
+122. Best Time to Buy and Sell Stock II 
+123. Best Time to Buy and Sell Stock III 
+188. Best Time to Buy and Sell Stock IV 
  */
 public class NO309_BestTimetoBuyandSellStockwithCooldown {
 	//方法1：

@@ -13,6 +13,8 @@ Example 2:
 		nums2 = [3, 4]
 		The median is (2 + 3)/2 = 2.5
 
+similar problems:
+
  */
 public class NO4_MedianofTwoSortedArrays {
 	public static void main(String[] args) {

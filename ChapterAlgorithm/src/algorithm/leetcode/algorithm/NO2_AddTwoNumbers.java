@@ -8,6 +8,13 @@ package algorithm.leetcode.algorithm;
  *  You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
+
+similar problems：
+43. Multiply Strings 
+67. Add Binary 
+371. Sum of Two Integers 
+415. Add Strings 
+445. Add Two Numbers II 
  */
 public class NO2_AddTwoNumbers {
 	public static void main(String[] args) {
@@ -28,6 +35,9 @@ public class NO2_AddTwoNumbers {
 			result = result.next;
 		}
 	}
+	//方法1：
+	//直接遍历分别用两个指针同样速度同时分别遍历两个链表
+	//计算两个指针指向的节点的和
     public static  ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = null,node = null;
         int x = 0;

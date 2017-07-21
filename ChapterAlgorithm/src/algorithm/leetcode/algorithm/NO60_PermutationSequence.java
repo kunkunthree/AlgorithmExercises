@@ -17,6 +17,10 @@ We get the following sequence (ie, for n = 3):
 Given n and k, return the kth permutation sequence.
 
 Note: Given n will be between 1 and 9 inclusive.
+
+similar problems:
+31. Next Permutation 
+ 46. Permutations
  */
 import java.util.*;
 public class NO60_PermutationSequence {

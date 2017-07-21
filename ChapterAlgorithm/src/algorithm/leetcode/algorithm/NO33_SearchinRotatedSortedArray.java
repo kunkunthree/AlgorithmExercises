@@ -9,6 +9,10 @@ package algorithm.leetcode.algorithm;
 You are given a target value to search. If found in the array return its index, otherwise return -1.
 
 You may assume no duplicate exists in the array.
+
+similar problems:
+81. Search in Rotated Sorted Array II 
+153. Find Minimum in Rotated Sorted Array 
  */
 public class NO33_SearchinRotatedSortedArray {
 	//方法1，先找最小值的索引，找出旋转的位数，然后通过映射当前索引到原来的索引，二分查找出target的位置

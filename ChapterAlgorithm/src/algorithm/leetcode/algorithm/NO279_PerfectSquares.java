@@ -6,6 +6,10 @@ package algorithm.leetcode.algorithm;
  *  which sum to n.
 
 For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return 2 because 13 = 4 + 9. 
+
+similar problems:
+204. Count Primes 
+264. Ugly Number II 
  */
 import java.util.*;
 public class NO279_PerfectSquares {
@@ -63,6 +67,7 @@ public class NO279_PerfectSquares {
         return sq * sq == n;
     }
     //方法3：
+    //BFS
     //迭代，利用queue保存每一个第一次得到平方和的节点，
     //遍历小于n的平方列表，把下一个第一次出现的平方和放入队列
     public int numSquares3(int n) {

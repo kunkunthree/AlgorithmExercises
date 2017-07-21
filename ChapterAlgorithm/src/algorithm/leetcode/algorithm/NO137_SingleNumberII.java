@@ -43,7 +43,11 @@ and b can do the same we , and we find that
    	
 b= ~a&b&~c+~a&~b&c
 
-and this is the final formula of a and b and just one of the result set, because for different state move table definition, we can generate different formulas, and this one is may not the most optimised. as you may see other's answer that have a much simple formula, and that formula also corresponding to specific state move table. (if you like ,you can reverse their formula to a state move table, just using the same way but reversely)
+and this is the final formula of a and b and just one of the result set, 
+because for different state move table definition, we can generate different formulas, 
+and this one is may not the most optimised. as you may see other's answer that have a much simple formula, 
+and that formula also corresponding to specific state move table. 
+(if you like ,you can reverse their formula to a state move table, just using the same way but reversely)
 
 for this questions we need to find the except one
 as the question don't say if the one appears one time or two time ,
@@ -55,17 +59,25 @@ so for ab both
 we should return a|b;
 this is the key idea , we can design any based counter and find the occurs any times except one .
 here is my code. with comment.
+
+similar problems:
+136. Single Number 
+260. Single Number III 
  */
 public class NO137_SingleNumberII {
+	public static void main(String[] args) {
+		int[] nums = new int[]{2,2,2,3,3,3,4};
+		System.out.println(singleNumber(nums));
+	}
 	//方法1：
 	//根据位的状态转移，通过列表计算每一位的表达式，最终把每一位进行计算获得最后位的状态
-	public int singleNumber(int[] nums) {
+	public static int singleNumber(int[] nums) {
         int a = 0, b = 0,tmpA;
         for(int i = 0 ; i < nums.length ; i++){
             tmpA = (a&~b&~nums[i]) | (~a&b&nums[i]);
             b = (~a&b&~nums[i]) | (~a&~b&nums[i]);
             a = tmpA;
         }
-        return a|b;
+        return ~a&b;
     }
 }

@@ -12,6 +12,9 @@ Given s = "leetcode", return "leotcede".
 
 Note:
 The vowels does not include the letter "y". 
+
+similar problems:
+344. Reverse String 
  */
 public class NO345_ReverseVowelsofaString {
     public String reverseVowels(String s) {

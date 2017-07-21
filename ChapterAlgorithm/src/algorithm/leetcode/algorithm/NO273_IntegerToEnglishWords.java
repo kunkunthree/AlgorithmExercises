@@ -10,6 +10,9 @@ For example,
 123 -> "One Hundred Twenty Three"
 12345 -> "Twelve Thousand Three Hundred Forty Five"
 1234567 -> "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven"
+
+similar problems:
+12. Integer to Roman 
  */
 public class NO273_IntegerToEnglishWords {
 	//方法1：

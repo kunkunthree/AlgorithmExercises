@@ -13,7 +13,10 @@ If the target is not found in the array, return [-1, -1].
 
 For example,
 Given [5, 7, 7, 8, 8, 10] and target value 8,
-return [3, 4]. 
+return [3, 4].
+
+ similar problems:
+278. First Bad Version 
  */
 public class NO34_SearchforaRange {
 	public static void main(String[] args) {

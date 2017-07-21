@@ -67,7 +67,7 @@ public class NO628_MaximumProductOfThreeNumbers {
     }
 	//方法2：
 	//同方法1
-	public int maximumProduct(int[] nums) {
+	public int maximumProduct2(int[] nums) {
         int max1 = Integer.MIN_VALUE, max2 = Integer.MIN_VALUE, max3 = Integer.MIN_VALUE, min1 = Integer.MAX_VALUE, min2 = Integer.MIN_VALUE;
         for (int n : nums) {
             if (n > max1) {

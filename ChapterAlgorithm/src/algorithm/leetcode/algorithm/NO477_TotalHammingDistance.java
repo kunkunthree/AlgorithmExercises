@@ -20,6 +20,8 @@ Note:
     1.	Elements of the given array are in the range of 0 to 10^9
     2.	Length of the array will not exceed 10^4.
 
+similar problems:
+461. Hamming Distance 
  */
 public class NO477_TotalHammingDistance {
 	//方法1：

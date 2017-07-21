@@ -32,6 +32,8 @@ Note:
     The index is starting from 0 to the list length minus 1.
     No duplicates in both lists.
 
+similar problems:
+160. Intersection of Two Linked Lists 
  */
 import java.util.*;
 public class NO599_MinimumIndexSumOfTwoLists {

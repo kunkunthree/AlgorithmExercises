@@ -15,6 +15,9 @@ Input:
 Output:
 [5,6]
 
+similar problems:
+41. First Missing Positive
+442. Find All Duplicates in an Array  
  */
 import java.util.*;
 public class NO448_FindAllNumbersDisappearedinanArray {

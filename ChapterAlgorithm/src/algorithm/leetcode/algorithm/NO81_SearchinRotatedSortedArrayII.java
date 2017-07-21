@@ -15,6 +15,9 @@ Suppose an array sorted in ascending order is rotated at some pivot unknown to y
 Write a function to determine if a given target is in the array.
 
 The array may contain duplicates.
+
+similar problems:
+33. Search in Rotated Sorted Array 
  */
 public class NO81_SearchinRotatedSortedArrayII {
 	public static void main(String[] args) {

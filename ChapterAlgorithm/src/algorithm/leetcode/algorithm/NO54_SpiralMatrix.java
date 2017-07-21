@@ -13,15 +13,21 @@ Given the following matrix:
 ]
 
 You should return [1,2,3,6,9,8,7,4,5]. 
+
+similar problems:
+59. Spiral Matrix II 
  */
 import java.util.*;
 public class NO54_SpiralMatrix {
 	public static void main(String[] args) {
 		int[][] matrix = new int[][]{
-				{1,2,3},
-				{4,5,6},
-				{7,8,9}
+				{1,2,3,4},
+				{5,6,7,8},
+				{9,10,11,12}
 		};
+		for(int[] row : matrix){
+			System.out.println(Arrays.toString(row));
+		}
 		System.out.println(spiralOrder3(matrix));
 	}
 	//方法1：

@@ -7,8 +7,16 @@ package algorithm.leetcode.algorithm;
  *  (ie, buy one and sell one share of the stock multiple times). 
  *  However, you may not engage in multiple transactions at the same time 
  *  (ie, you must sell the stock before you buy again).
+ *  
+ *  similar problems:
+ *  121. Best Time to Buy and Sell Stock 
+ *  123. Best Time to Buy and Sell Stock III 
+ *  188. Best Time to Buy and Sell Stock IV 
+ *  309. Best Time to Buy and Sell Stock with Cooldown 
  */
 public class NO122_BestTimetoBuyandSellStockII {
+	//方法1：
+	//求每一个最低点到下一个最高点的差值的总和（假设-1位置是无限大，n位置是无限小）
     public int maxProfit(int[] prices) {
         if(prices == null || prices.length <= 1){
             return 0;
@@ -33,7 +41,8 @@ public class NO122_BestTimetoBuyandSellStockII {
         }
         return maxP;
     }
-    //最简单的写法，直接求递增的数目
+    //方法2：
+    //最简单的写法，直接求递增的数目，只求上升的部分
     public int maxProfit2(int[] prices) {
         int total = 0;
         for (int i=0; i< prices.length-1; i++) {

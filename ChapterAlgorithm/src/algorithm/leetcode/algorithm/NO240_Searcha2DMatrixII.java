@@ -22,6 +22,9 @@ Consider the following matrix:
 Given target = 5, return true.
 
 Given target = 20, return false.
+
+similar problems：
+74. Search a 2D Matrix 
  */
 public class NO240_Searcha2DMatrixII {
 	//方法1：O(m+n)time
@@ -47,5 +50,38 @@ public class NO240_Searcha2DMatrixII {
             }
         }
         return false;
+    }
+	//方法2：
+	//递归
+	public boolean searchMatrix2(int[][] matrix, int target) {
+        if(matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0){
+            return false;
+        }
+        int m = matrix.length,n = matrix[0].length;
+        return searchMatrixHelper(matrix,0,0,m-1,n-1,target);
+    }
+    public boolean searchMatrixHelper(int[][] matrix,int x1,int y1,int x2,int y2, int target){
+        if(x1 < 0 || x1 >= matrix.length || x2 < 0 || x2 >= matrix.length
+            || y1 < 0 || y1 >= matrix[0].length || y2 < 0 || y2 >= matrix[0].length){
+                return false;
+            }
+        if(x1 == x2 & y1 == y2){
+            return matrix[x1][y1] == target;
+        }
+        int centerX = (x1+x2)/2;
+        int centerY = (y1+y2)/2;
+        boolean result = false;
+        if(target > matrix[centerX][centerY]){
+            result = searchMatrixHelper(matrix,x1,centerY+1,centerX,y2,target)          //右上方区域
+                    || searchMatrixHelper(matrix,centerX+1,y1,x2,centerY,target)        //左下方区域
+                    || searchMatrixHelper(matrix,centerX+1,centerY+1,x2,y2,target);     //右下方区域  
+        }else if(target < matrix[centerX][centerY]){
+            result = searchMatrixHelper(matrix,x1,centerY+1,centerX,y2,target)          //右上方区域
+                    || searchMatrixHelper(matrix,centerX+1,y1,x2,centerY,target)        //左下方区域
+                    || searchMatrixHelper(matrix,x1,y1,centerX,centerY,target);         //左上方区域  
+        }else{
+            result = true;
+        }
+        return result;
     }
 }

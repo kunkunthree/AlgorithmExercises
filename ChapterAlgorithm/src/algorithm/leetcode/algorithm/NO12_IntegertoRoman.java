@@ -10,6 +10,10 @@ package algorithm.leetcode.algorithm;
  * C:100		XL:90		LX:110
  * D:500		CD:400		DC:600
  * M:1000		CM:900		MC:1100
+ * 
+ * similar problems:
+ * 13. Roman to Integer 
+ * 273. Integer to English Words 
  */
 public class NO12_IntegertoRoman {
 	public static void main(String[] args) {

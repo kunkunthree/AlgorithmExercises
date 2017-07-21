@@ -6,6 +6,10 @@ package algorithm.leetcode.algorithm;
 
 Follow up:
 Could you do it without using any loop / recursion? 
+
+similar problems:
+231. Power of Two 
+342. Power of Four 
  */
 public class NO326_PowerofThree {
 	public static void main(String[] args) {

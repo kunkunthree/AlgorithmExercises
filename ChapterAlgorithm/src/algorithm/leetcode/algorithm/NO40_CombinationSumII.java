@@ -21,6 +21,11 @@ A solution set is:
   [1, 1, 6]
 ]
 
+similar problems:
+39. Combination Sum
+40. Combination Sum II
+216. Combination Sum III
+377. Combination Sum IV
  */
 import java.util.*;
 public class NO40_CombinationSumII {
@@ -50,5 +55,38 @@ public class NO40_CombinationSumII {
             }
         }
         return ll;
+    }
+    //方法2：
+    //dp，动态规划，迭代
+    public List<List<Integer>> combinationSum2_2(int[] nums, int target) {
+        Map<Integer, Set<List<Integer>>> hp = new HashMap<>();        
+        Arrays.sort(nums);
+        for(int i = 0; i<= target; i++){
+                    hp.put(i, new HashSet<List<Integer>>());
+                }
+        for(int i = 0; i < nums.length; i++){
+            for(int t = target; t >= 0; t--){             
+               if(t == nums[i] ){
+                    List<Integer> l = new ArrayList<>();
+                    l.add(t);
+                    hp.get(t).add(l);
+                }
+                if(t > nums[i]){
+                    Set<List<Integer>> l = hp.get(t - nums[i]);
+                    for(List<Integer> e : l){
+                        if(nums[i] >= e.get(e.size() - 1)){
+                            List<Integer> temp = new LinkedList<>();
+                            temp.addAll(e);
+                            temp.add(0, nums[i]);
+                            hp.get(t).add(temp);
+                        }
+                    }
+                }
+                
+             }
+        }
+        Set<List<Integer>> res = hp.get(target);
+        
+        return new ArrayList<List<Integer>>(res);
     }
 }

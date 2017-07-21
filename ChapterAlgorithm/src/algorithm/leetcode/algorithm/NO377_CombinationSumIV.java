@@ -27,7 +27,14 @@ Follow up:
 What if negative numbers are allowed in the given array?
 How does it change the problem?
 What limitation we need to add to the question to allow negative numbers? 
+
+similar problems:
+39. Combination Sum
+40. Combination Sum II
+216. Combination Sum III
+377. Combination Sum IV
  */
+import java.util.*;
 public class NO377_CombinationSumIV {
 	public static void main(String[] args) {
 		int[] nums = new int[]{1,2,3};
@@ -51,5 +58,19 @@ public class NO377_CombinationSumIV {
             }
         }
         return dp[target];
+    }
+	//方法2：
+	//DFS，递归，用一个hashMap记录中间结果，节省运算时间
+	Map<Integer, Integer> map = new HashMap<>();
+    public int combinationSum4_2(int[] nums, int target) {
+        int count = 0;
+        if (nums == null || nums.length ==0 || target < 0 ) return 0;
+        if ( target ==0 ) return 1;
+        if (map.containsKey(target)) return map.get(target);
+        for (int num: nums){
+            count += combinationSum4_2(nums, target-num);
+        }
+        map.put(target, count);
+        return count;
     }
 }

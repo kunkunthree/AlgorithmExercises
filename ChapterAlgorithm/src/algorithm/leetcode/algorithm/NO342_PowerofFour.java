@@ -16,6 +16,7 @@ public class NO342_PowerofFour {
 			x=x*4;
 		}
 		System.out.println(x);
+		System.out.println(Integer.toBinaryString(0x55555555));
 	}
 	//1向左移动2的倍数位得到4的幂
     public boolean isPowerOfFour(int num) {

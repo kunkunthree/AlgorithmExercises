@@ -19,6 +19,8 @@ solution.pick(3);
 // pick(1) should return 0. Since in the array only nums[0] is equal to 1.
 solution.pick(1);
 
+similar problems:
+382. Linked List Random Node 
  */
 import java.util.*;
 public class NO398_RandomPickIndex {

@@ -26,6 +26,8 @@ Visually, the graph looks like the following:
 	         / \
 	         \_/
 
+similar problems:
+138. Copy List with Random Pointer 
  */
 import java.util.*;
 public class NO133_CloneGraph {

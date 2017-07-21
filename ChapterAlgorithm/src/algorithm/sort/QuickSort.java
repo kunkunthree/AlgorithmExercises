@@ -14,15 +14,16 @@ import java.util.*;
 public class QuickSort {
 	public static void main(String[] args) {
 		Random rand = new Random();
-		int[] array = new int[rand.nextInt(50)+1];
-		println("size = "  + array.length);
-		for(int i = 0 ; i < array.length ; i++){
-			array[i] = rand.nextInt(100);
-		}
-//		int[] array = new int[]{65, 70, 41, 59, 67, 91, 62, 62, 62, 1, 28, 58, 50};
+//		int[] array = new int[rand.nextInt(50)+1];
+//		println("size = "  + array.length);
+//		for(int i = 0 ; i < array.length ; i++){
+//			array[i] = rand.nextInt(100);
+//		}
+		int[] array = new int[]{65, 70, 41, 59, 67, 91, 62, 62, 62, 1, 28, 58, 50};
 		println("sort before:");
 		println(Arrays.toString(array));
-		quickSort(array, 0, array.length-1);
+//		quickSort(array, 0, array.length-1);
+		quickSort(array);
 		println("sort after:");
 		println(Arrays.toString(array));
 	}
@@ -79,4 +80,47 @@ public class QuickSort {
 	        quick_sort(s, i + 1, r);  
 	    }  
 	}  
+	
+	//非递归实现：
+	//	用栈实现：
+	//	1。每次把支点的右段入栈（当然只记录该段的起始与结束标记）；
+	//	2。然后继续对支点的左段重复过程1，若左段的元素小于2个，则不需要再重复1，转到3；
+	//	3。左段已排好，从栈中取出最新的右段，转到1，若栈空则结束。
+	public static void quickSort(int[] nums){
+		if(nums == null || nums.length <= 1){
+			return;
+		}
+		Stack<int[]> stack = new Stack<int[]>();
+		int left = 0,right = nums.length-1;
+		stack.push(new int[]{left,right});
+		while(!stack.isEmpty()){
+			int[] range = stack.pop();
+			int separator = getSeparator(nums, range[0], range[1]);
+			if(range[0] < separator-1){
+				stack.push(new int[]{range[0] , separator-1});
+			}
+			if(separator+1 < range[1]){
+				stack.push(new int[]{separator+1 , range[1]});
+			}
+		}
+	}
+	public static int getSeparator(int[] nums,int start,int end){
+		int pivot = nums[start];
+		while(start < end){
+			while(start < end && nums[end] >= pivot){	// 从右向左找第一个小于pivot的数  
+				end--;
+			}
+			if(start < end){
+				nums[start++] = nums[end];
+			}
+			while(start < end && nums[start] < pivot){		// 从左向右找第一个大于等于pivot的数  
+				start++;
+			}
+			if(start < end){
+				nums[end--] = nums[start];
+			}
+		}
+		nums[start] = pivot;
+		return start;
+	}
 }

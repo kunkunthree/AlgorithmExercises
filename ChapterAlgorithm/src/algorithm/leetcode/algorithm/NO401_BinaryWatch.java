@@ -1,7 +1,7 @@
 package algorithm.leetcode.algorithm;
 
 /*
- * east
+ * easy
  * 401. Binary Watch 
  * A binary watch has 4 LEDs on the top which represent the hours (0-11), 
  * and the 6 LEDs on the bottom represent the minutes (0-59).
@@ -24,10 +24,15 @@ package algorithm.leetcode.algorithm;
  The hour must not contain a leading zero, for example "01:00" is not valid, it should be "1:00".
  The minute must be consist of two digits and may contain a leading zero, for example "10:2" is not valid, it should be "10:02".
 
+similar problems：
+17. Letter Combinations of a Phone Number 
+191. Number of 1 Bits 
  */
 import java.util.*;
 
 public class NO401_BinaryWatch {
+	//方法1：
+	//递归，分别求小时数和分钟数的集合，然后进行组合，去除不符合的组合
 	public List<String> readBinaryWatch(int num) {
 		List<String> result = new ArrayList<String>();
 		int[] h = new int[] { 1, 2, 4, 8 };
@@ -54,7 +59,7 @@ public class NO401_BinaryWatch {
 		// Collections.sort(result);
 		return result;
 	}
-
+	//辅助函数，求小时数或分钟数的集合
 	public List<Integer> readBinaryWatchHelper(int time, int sum, int pos,
 			int[] array) {
 		List<Integer> list = new ArrayList<Integer>();
@@ -70,7 +75,8 @@ public class NO401_BinaryWatch {
 		}
 		return list;
 	}
-
+	
+	//方法2：
 	// 通过预处理，得到处理速度最大
 	String[][] hour = { { "0" }, { "1", "2", "4", "8" },
 			{ "3", "5", "6", "9", "10" }, { "7", "11" } };
@@ -84,7 +90,6 @@ public class NO401_BinaryWatch {
 			{ "15", "23", "27", "29", "30", "39", "43", "45", "46", "51", "53",
 					"54", "57", "58" }, // 14
 			{ "31", "47", "55", "59" } }; // 4
-
 	public List<String> readBinaryWatch2(int num) {
 		List<String> ret = new ArrayList();
 		for (int i = 0; i <= 3 && i <= num; i++) {
@@ -99,6 +104,7 @@ public class NO401_BinaryWatch {
 		return ret;
 	}
 	
+	//方法3：
 	//穷举法
 	public List<String> readBinaryWatch3(int num) {
         ArrayList<String> result = new ArrayList<>();

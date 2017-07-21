@@ -14,6 +14,9 @@ For example, given n = 3, a solution set is:
   "()()()"
 ]
 
+similar problems:
+20. Valid Parentheses 
+17. Letter Combinations of a Phone Number 
  */
 import java.util.*;
 public class NO22_GenerateParentheses {

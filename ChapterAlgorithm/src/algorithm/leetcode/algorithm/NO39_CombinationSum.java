@@ -19,6 +19,12 @@ A solution set is:
   [2, 2, 3]
 ]
 
+similar problems:
+40. Combination Sum II
+216. Combination Sum III
+377. Combination Sum IV
+17. Letter Combinations of a Phone Number 
+77. Combinations 
  */
 import java.util.*;
 public class NO39_CombinationSum {
@@ -28,6 +34,7 @@ public class NO39_CombinationSum {
 		System.out.println(combinationSum(candidates, target));
 	}
 	//方法1：先对candidate数组排序，然后再使用贪心算法
+	//递归
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
     	Arrays.sort(candidates);
         return combinationSumHelper(candidates,0,new ArrayList<Integer>(),target);

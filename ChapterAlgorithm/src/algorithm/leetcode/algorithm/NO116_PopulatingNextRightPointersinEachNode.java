@@ -38,6 +38,9 @@ After calling your function, the tree should look like:
      / \  / \
     4->5->6->7 -> NULL
 
+similar problems:
+117. Populating Next Right Pointers in Each Node II 
+199. Binary Tree Right Side View 
  */
 public class NO116_PopulatingNextRightPointersinEachNode {
 	public static void main(String[] args) {

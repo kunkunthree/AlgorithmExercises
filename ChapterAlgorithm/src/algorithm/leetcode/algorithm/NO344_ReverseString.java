@@ -6,6 +6,10 @@ package algorithm.leetcode.algorithm;
 
 Example:
 Given s = "hello", return "olleh". 
+
+similar problems:
+345. Reverse Vowels of a String 
+541. Reverse String II 
  */
 public class NO344_ReverseString {
     public String reverseString(String s) {

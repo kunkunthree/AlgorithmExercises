@@ -14,6 +14,10 @@ If n = 4 and k = 2, a solution is:
   [1,3],
   [1,4],
 ]
+
+similar problems:
+39. Combination Sum 
+46. Permutations 
  */
 import java.util.*;
 public class NO77_Combinations {

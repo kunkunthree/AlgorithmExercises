@@ -14,20 +14,24 @@ Example: 19 is a happy number
     6^2 + 8^2 = 100
     1^2 + 0^2 + 0^2 = 1
 
+similar problems:
+258. Add Digits 
+263. Ugly Number 
  */
 import java.util.*;
 public class NO202_HappyNumber {
 	public static void main(String[] args) {
-		for(int i = 2 ; i < 100 ; i++){
-			System.out.println(i + "  " + isHappy(i));
-		}
+//		for(int i = 2 ; i < 100 ; i++){
+//			System.out.println(i + "  " + isHappy(i));
+//		}
+		System.out.println(isHappy(2));
 	}
+	//方法1：
     public static boolean isHappy(int n) {
         if(n <= 0){
             return false;
         }
         Set<Integer> set = new HashSet<Integer>();
-        int[] array;
         int oldValue = n,newValue,count = 0;
         set.add(oldValue);
         int tmp;
@@ -50,6 +54,7 @@ public class NO202_HappyNumber {
             }
             set.add(newValue);
             oldValue = newValue;
+            System.out.println(newValue);
         }
         if(oldValue == 1){
             return true;
@@ -57,7 +62,9 @@ public class NO202_HappyNumber {
             return false;
         }
     }
+    //方法2：
     //O(1)space
+    //利用两个指针，一个快一个慢，当进入循环时，快指针和慢指针会相遇
     public static boolean isHappy2(int n) {
         int slow, fast;
         slow = fast = n;

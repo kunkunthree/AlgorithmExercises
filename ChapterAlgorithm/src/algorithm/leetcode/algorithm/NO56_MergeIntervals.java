@@ -7,6 +7,10 @@ package algorithm.leetcode.algorithm;
 For example,
 Given [1,3],[2,6],[8,10],[15,18],
 return [1,6],[8,10],[15,18]. 
+
+similar problems:
+57. Insert Interval 
+495. Teemo Attacking 
  */
 import java.util.*;
 public class NO56_MergeIntervals {

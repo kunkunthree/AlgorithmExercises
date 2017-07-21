@@ -19,9 +19,16 @@ Solution solution = new Solution(head);
 // getRandom() should return either 1, 2, or 3 randomly. Each element should have equal probability of returning.
 solution.getRandom();
 
+similar problems:
+398. Random Pick Index 
+
  */
 import java.util.*;
 public class NO382_LinkedListRandomNode {
+	public static void main(String[] args) {
+		Random rand = new Random();
+		System.out.println(rand.nextInt(1));
+	}
 	//方法1：
 	//水塘抽样，Reservoir Sampling
 	//我们可以得出结论，在取第n个数据的时候，我们生成一个0到1的随机数p，如果p小于1/n，保留第n个数。
@@ -38,7 +45,7 @@ public class NO382_LinkedListRandomNode {
 	    }
 	    /** Returns a random node's value. */
 	    public int getRandom() {
-	        int count = 1,result = head.val;
+	        int count = 1,result = 0;
 	        ListNode tmp = head;
 	        while(tmp != null){
 	            int a = rand.nextInt(count);

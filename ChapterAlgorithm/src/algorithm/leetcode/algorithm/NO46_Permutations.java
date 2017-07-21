@@ -1,7 +1,4 @@
 package algorithm.leetcode.algorithm;
-
-import java.util.Arrays;
-
 /*
  * medium
  * 46. Permutations
@@ -18,6 +15,11 @@ import java.util.Arrays;
  [3,2,1]
  ]
 
+similar problems:
+31. Next Permutation 
+47. Permutations II 
+60. Permutation Sequence 
+77. Combinations 
  */
 import java.util.*;
 public class NO46_Permutations {
@@ -85,5 +87,24 @@ public class NO46_Permutations {
             perm(nums,ll,start+1,end);	//假设start位置确定，那么对start+1~end中的数继续递归
             swap(nums,start,i);					//换过去后再还原
         }
+    }
+    
+    //方法3：
+    //迭代，遍历一边数组，把每一个遍历到的数从当前得到的结果集中进行不同位置的插入
+    public List<List<Integer>> permute3(int[] nums) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        result.add(new ArrayList<Integer>());
+        for(int i = 0 ; i < nums.length ; i++){
+            List<List<Integer>> tmpResult = new ArrayList<List<Integer>>();
+            for(int j = 0 ; j <= i ; j++){
+                for(List<Integer> list : result){
+                    List<Integer> newList = new ArrayList<>(list);
+                    newList.add(j,nums[i]);
+                    tmpResult.add(newList);
+                }
+            }
+            result = tmpResult;
+        }
+        return result;
     }
 }

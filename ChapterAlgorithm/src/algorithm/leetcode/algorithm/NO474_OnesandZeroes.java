@@ -28,6 +28,9 @@ Output: 2
 
 Explanation: You could form "10", but then you'd have nothing left. Better form "0" and "1".
 
+similar problems:
+ 600. Non-negative Integers without Consecutive Ones
+
  */
 public class NO474_OnesandZeroes {
 	//方法1：

@@ -45,9 +45,9 @@ Notice that a/aa/aaa/file1.txt is not the longest file path, if there is another
 import java.util.*;
 public class NO388_LongestAbsoluteFilePath {
 	public static void main(String[] args) {
-		String input = "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext";
+		String input = "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext";
 //		System.out.println("\t".length());
-		System.out.println(lengthLongestPath(input));
+		System.out.println(lengthLongestPath2(input));
 	}
 	//方法1：
 	//迭代，直接法
@@ -90,7 +90,7 @@ public class NO388_LongestAbsoluteFilePath {
     }
 	//方法2：
 	//方法1的简化写法
-	public int lengthLongestPath2(String input) {
+	public static int lengthLongestPath2(String input) {
         Deque<Integer> stack = new ArrayDeque<>();
         stack.push(0); // "dummy" length
         int maxLen = 0;

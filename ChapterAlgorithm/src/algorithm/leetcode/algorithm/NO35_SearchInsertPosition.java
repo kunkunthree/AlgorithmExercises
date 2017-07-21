@@ -10,6 +10,9 @@ Here are few examples.
 [1,3,5,6], 2 → 1
 [1,3,5,6], 7 → 4
 [1,3,5,6], 0 → 0  
+
+similar problems:
+278. First Bad Version 
  */
 public class NO35_SearchInsertPosition {
     public int searchInsert(int[] nums, int target) {

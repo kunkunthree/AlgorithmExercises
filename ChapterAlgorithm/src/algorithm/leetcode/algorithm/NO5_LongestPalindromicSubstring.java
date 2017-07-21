@@ -23,6 +23,8 @@ public class NO5_LongestPalindromicSubstring {
 			System.out.println(longestPalindrome(s));
 		}
 	}
+	//方法1：
+	//
     public static String longestPalindrome(String s) {
         char[] array = s.toCharArray();
         int length = array.length;
@@ -103,6 +105,7 @@ public class NO5_LongestPalindromicSubstring {
          }
     	 return tmpLength;
     }
+    //方法2：
     public String longestPalindrome2(String s) {
         char[] array = s.toCharArray();
         int length = array.length;
@@ -143,6 +146,7 @@ public class NO5_LongestPalindromicSubstring {
     }
     
     
+    //方法3：
     int palinStart = 0;
     int palinLen = 0;
     

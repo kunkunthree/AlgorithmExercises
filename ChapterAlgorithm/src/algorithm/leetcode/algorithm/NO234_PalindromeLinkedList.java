@@ -13,6 +13,8 @@ public class NO234_PalindromeLinkedList {
 		head.next.next = new ListNode(0);
 		System.out.println(isPalindrome(head));
 	}
+	//方法1：
+	//
     public static  boolean isPalindrome(ListNode head) {
         if(head == null){
             return true;

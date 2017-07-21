@@ -6,6 +6,9 @@ package algorithm.leetcode.algorithm;
  *  which could point to any node in the list or null.
 
 Return a deep copy of the list. 
+
+similar problems:
+133. Clone Graph 
  */
 import java.util.*;
 public class NO138_CopyListwithRandomPointer {

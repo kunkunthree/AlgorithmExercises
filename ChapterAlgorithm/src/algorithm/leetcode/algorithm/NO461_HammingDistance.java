@@ -15,6 +15,10 @@ Explanation:
 4   (0 1 0 0)
        ↑   ↑
 The above arrows point to positions where the corresponding bits are different.
+
+similar problems:
+191. Number of 1 Bits 
+477. Total Hamming Distance 
  */
 import java.util.*;
 public class NO461_HammingDistance {
@@ -26,6 +30,8 @@ public class NO461_HammingDistance {
 			System.out.println(hammingDistance(x, y));
 		}
 	}
+	//方法1：
+	//直接法
     public static int hammingDistance(int x, int y) {
         int num = 0;
         //int tmp = x ^ y;
@@ -36,6 +42,17 @@ public class NO461_HammingDistance {
             //tmp>>=1;
             x>>=1;
             y>>=1;
+        }
+        return num;
+    }
+    //方法2：
+    //先做异或运算，然后数1的个数
+    public int hammingDistance2(int x, int y) {
+        int num = 0;
+        int tmp = x ^ y;
+        while(tmp != 0){
+            tmp&=(tmp-1);
+            num++;
         }
         return num;
     }

@@ -10,6 +10,8 @@ Follow up:
 If this function is called many times, how would you optimize it?
 
 Related problem: Reverse Integer
+similar problems:
+191. Number of 1 Bits 
  */
 import java.util.*;
 public class NO190_ReverseBits {

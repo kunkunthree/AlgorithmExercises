@@ -14,6 +14,9 @@ return 1->3->5->2->4->NULL.
 Note:
 The relative order inside both the even and odd groups should remain as it was in the input.
 The first node is considered odd, the second node even and so on ... 
+
+similar problems:
+
  */
 public class NO328_OddEvenLinkedList {
 	//方法1：

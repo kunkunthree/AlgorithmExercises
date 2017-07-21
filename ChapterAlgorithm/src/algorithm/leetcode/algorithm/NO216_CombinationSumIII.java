@@ -17,6 +17,11 @@ Input: k = 3, n = 9
 Output:
 [[1,2,6], [1,3,5], [2,3,4]]
 
+similar problems:
+39. Combination Sum
+40. Combination Sum II
+216. Combination Sum III
+377. Combination Sum IV
  */
 import java.util.*;
 public class NO216_CombinationSumIII {
@@ -25,6 +30,8 @@ public class NO216_CombinationSumIII {
 		int n = 9;
 		System.out.println(combinationSum3(k, n));
 	}
+	//方法1：
+	//DFS,backtracking
 	public static List<List<Integer>> combinationSum3(int k, int n) {
         List<List<Integer>> ll = new ArrayList<>();
         List<Integer> list = new ArrayList<>();
@@ -47,5 +54,33 @@ public class NO216_CombinationSumIII {
             list.remove(list.size()-1);
         }
     }
-    
+    //方法2：
+    //dp，动态规划，迭代
+    public List<List<Integer>> combinationSum3_2(int k, int n) {
+        List<List<Integer>>[] lists = new List[n+1];
+        for(int i = 0 ; i <= n ; i++){
+            lists[i] = new ArrayList<List<Integer>>();
+        }
+        lists[0].add(new ArrayList<Integer>());
+        for(int count = 1 ; count <= k ; count++){
+            List<List<Integer>>[] newLists = new List[n+1];
+            for(int i = 0 ; i <= n ; i++){
+                newLists[i] = new ArrayList<List<Integer>>();
+            }
+            for(int sum = 0 ; sum <= n ; sum++){
+                for(int add = 1 ; add <= 9 && add <= sum ; add++){
+                    for(List<Integer> list : lists[sum-add]){
+                        if(count == 1 || add > list.get(list.size()-1)){
+                            List<Integer> newList = new ArrayList<>();
+                            newList.addAll(list);
+                            newList.add(add);
+                            newLists[sum].add(newList);
+                        }
+                    }
+                }
+            }
+            lists = newLists;
+        }
+        return lists[n];
+    }
 }

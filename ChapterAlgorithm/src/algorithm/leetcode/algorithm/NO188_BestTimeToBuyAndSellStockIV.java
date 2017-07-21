@@ -8,6 +8,12 @@ Design an algorithm to find the maximum profit. You may complete at most k trans
 
 Note:
 You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
+
+similar problems:
+121. Best Time to Buy and Sell Stock 
+122. Best Time to Buy and Sell Stock II
+123. Best Time to Buy and Sell Stock III 
+309. Best Time to Buy and Sell Stock with Cooldown  
  */
 import java.util.*;
 public class NO188_BestTimeToBuyAndSellStockIV {

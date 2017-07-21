@@ -14,6 +14,9 @@ Example 2:
 Input: 21
 Output: -1
 
+similar problems：
+496. Next Greater Element I 
+503. Next Greater Element II 
  */
 import java.util.*;
 public class NO556_NextGreaterElementIII {

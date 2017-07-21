@@ -2,7 +2,10 @@ package algorithm.leetcode.algorithm;
 /*
  * medium
  * 275. H-Index II
- * Follow up for H-Index: What if the citations array is sorted in ascending order? Could you optimize your algorithm? 
+ * Follow up for H-Index: What if the citations array is sorted in ascending order? Could you optimize your algorithm?
+ * 
+ *  similar problems：
+ *  274. H-Index 
  */
 public class NO275_H_IndexII {
 	//方法1：O(n)

@@ -10,6 +10,11 @@ Given nums = [0, 1, 3] return 2.
 Note:
 Your algorithm should run in linear runtime complexity. 
 Could you implement it using only constant extra space complexity? 
+
+similar problems:
+41. First Missing Positive 
+136. Single Number 
+287. Find the Duplicate Number 
  */
 public class NO268_MissingNumber {
 	//可以先求和再求差，最终结果就是没有的那个数

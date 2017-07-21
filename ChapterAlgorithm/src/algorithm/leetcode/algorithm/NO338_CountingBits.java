@@ -17,6 +17,8 @@ Follow up:
     Can you do it like a boss? Do it without using any builtin function like __builtin_popcount in c++
      		or in any other language.
 
+similar problems:
+191. Number of 1 Bits 
  */
 public class NO338_CountingBits {
 	//方法1：

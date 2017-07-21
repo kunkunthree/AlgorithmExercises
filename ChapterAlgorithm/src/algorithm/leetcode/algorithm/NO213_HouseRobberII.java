@@ -11,6 +11,11 @@ Meanwhile, the security system for these houses remain the same as for those in 
 
 Given a list of non-negative integers representing the amount of money of each house, 
 determine the maximum amount of money you can rob tonight without alerting the police.
+
+similar problems:
+198. House Robber 
+337. House Robber III 
+600. Non-negative Integers without Consecutive Ones 
  */
 import java.util.*;
 public class NO213_HouseRobberII {

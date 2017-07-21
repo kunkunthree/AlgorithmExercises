@@ -23,12 +23,15 @@ package algorithm.leetcode.algorithm;
 
  Explanation: It's the substring "abc" four times. (And the substring "abcabc" twice.)
 
+similar problems：
+28. Implement strStr() 
  */
 public class NO459_RepeatedSubstringPattern {
 	public static void main(String[] args) {
 		System.out.println(repeatedSubstringPattern("ab"));
 	}
-
+	//方法1：
+	//从长度1开始测试，测试是否符合，
 	public static boolean repeatedSubstringPattern(String s) {
 		if (s == null || s.length() <= 1) {
 			return false;
@@ -44,7 +47,10 @@ public class NO459_RepeatedSubstringPattern {
 			}
 			if (j != count) {
 				count++;
-				i = count;
+                while(s.length() % count != 0){
+                    count++;
+                }
+                i=count;
 			} else {
 				i += count;
 			}

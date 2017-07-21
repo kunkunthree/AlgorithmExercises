@@ -6,8 +6,13 @@ package algorithm.leetcode.algorithm;
 
 Supposed the linked list is 1 -> 2 -> 3 -> 4 and you are given the third node with value 3,
 the linked list should become 1 -> 2 -> 4 after calling your function. 
+
+similar problems：
+203. Remove Linked List Elements 
  */
 public class NO237_DeleteNodeinaLinkedList {
+	//方法1：
+	//值替换
     public void deleteNode(ListNode node) {
         if(node == null || node.next == null){
             return;

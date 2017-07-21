@@ -16,6 +16,13 @@ If there is no such window in S that covers all characters in T, return the empt
 
 If there are multiple such windows, you are guaranteed that there will always be only one unique 
 minimum window in S. 
+
+similar problems:
+30. Substring with Concatenation of All Words 
+209. Minimum Size Subarray Sum 
+239. Sliding Window Maximum 
+567. Permutation in String 
+632. Smallest Range 
  */
 public class NO76_MinimumWindowSubstring {
 	//方法1：
