@@ -1,10 +1,13 @@
 package algorithm.sort;
-
 import java.util.Arrays;
 
 /*
  * 基数排序：
- * 		
+ * 		基数排序是按照低位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高位。
+ * 有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优 先级排序，最后的次序就是高优先级高的在前，
+ * 高优先级相同的低优先级高的在前。基数排序基于分别排序，分别收集，
+ * 
+ * 所以其是稳定的排序算法。
  */
 import java.util.*;
 public class RadixSort {
@@ -70,7 +73,7 @@ public class RadixSort {
 			int d = getBitData(array[i],index,RADIX);
 			count[d]++;
 		}
-		//得到某个位的第一个数的位置
+		//得到某个位的最后一个数的位置
 		for(int i = 1 ; i < radix ; i++){
 			count[i]+=count[i-1];
 		}

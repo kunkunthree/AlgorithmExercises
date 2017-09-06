@@ -35,7 +35,7 @@ public class NO287_FindtheDuplicateNumber {
 //
 //		Step 4:
 //		Since there is only one duplicated number, then that's it.
-	public int findDuplicate(int[] nums) {
+	public static int findDuplicate(int[] nums) {
         if(nums == null || nums.length <= 1){
             return 0;
         }
@@ -51,4 +51,7 @@ public class NO287_FindtheDuplicateNumber {
         }
         return slow;
     }
+	public static void main(String[] args) {
+		int[] num = new int[]{};
+	}
 }

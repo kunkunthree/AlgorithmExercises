@@ -2,7 +2,8 @@ package algorithm.leetcode.algorithm;
 /*
  * hard
  * 446. Arithmetic Slices II - Subsequence 
- * A sequence of numbers is called arithmetic if it consists of at least three elements and if the difference between any two consecutive elements is the same.
+ * A sequence of numbers is called arithmetic if it consists of at least three elements
+ *  and if the difference between any two consecutive elements is the same.
 
 For example, these are arithmetic sequences:
 

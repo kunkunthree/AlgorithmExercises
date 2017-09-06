@@ -27,6 +27,8 @@ public class NO63_UniquePathsII {
 		int[][] obstacleGrid = new int[][]{{0}};
 		System.out.println(uniquePathsWithObstacles(obstacleGrid));
 	}
+	//方法1：
+	//动态规划
     public static int uniquePathsWithObstacles(int[][] obstacleGrid) {
         int m = obstacleGrid.length,n = obstacleGrid[0].length;
         int[][] dp = new int[m][n];

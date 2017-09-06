@@ -67,4 +67,41 @@ public class NO73_SetMatrixZeroes {
             }
         }
     }
+    //方法3：
+    //记录第一行是否有0，fr，记录第一列是否有0，fc
+    //三次遍历：
+    //第一次，从前往后遍历，把所有出现0的元素matrix[x][y]，置matrix[x][0]=0,matrix[0][y]=0
+    //第二次，从前往后遍历（除了第一行第一列），如果matrix[x][0]=0或者matrix[0][y]=0，则置matrix[x][y]=0
+    //第三次，如果fr为true，则置第一行为0，如果fc为true，则置第一列为0
+    public void setZeroes3(int[][] matrix) {
+        boolean fr = false,fc = false;
+        for(int i = 0; i < matrix.length; i++) {
+            for(int j = 0; j < matrix[0].length; j++) {
+                if(matrix[i][j] == 0) {
+                    if(i == 0) fr = true;
+                    if(j == 0) fc = true;
+                    matrix[0][j] = 0;
+                    matrix[i][0] = 0;
+                }
+            }
+        }
+        for(int i = 1; i < matrix.length; i++) {
+            for(int j = 1; j < matrix[0].length; j++) {
+                if(matrix[i][0] == 0 || matrix[0][j] == 0) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        if(fr) {
+            for(int j = 0; j < matrix[0].length; j++) {
+                matrix[0][j] = 0;
+            }
+        }
+        if(fc) {
+            for(int i = 0; i < matrix.length; i++) {
+                matrix[i][0] = 0;
+            }
+        }
+        
+    }
 }

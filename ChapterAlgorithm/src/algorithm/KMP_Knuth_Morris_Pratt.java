@@ -1,4 +1,7 @@
 package algorithm;
+
+import java.util.Arrays;
+
 /*
  * KMP算法：用于字符串匹配，在长度为m的字符串里匹配长度为n的字符串，O(m+n)time，O(n)space
  * http://blog.csdn.net/yutianzuijin/article/details/11954939/
@@ -54,7 +57,13 @@ public class KMP_Knuth_Morris_Pratt {
 	public static void main(String[] args) {
 		String original = "12312312345234";
 		String find = "23";
+		getNext("ABCAACBBCBADAABCACBD");
+		getNext2("ABCAACBBCBADAABCACBD");
+		getNext("ababaabab");
+		getNext3("ababaabab");
 		search(original, find, getNext(original));
+//		search2(original, find, getNext2(original));
+		search3(original, find, getNext3(original));
 	}
     public static int[] getNext(String b)  
     {  
@@ -70,7 +79,7 @@ public class KMP_Knuth_Morris_Pratt {
             if(b.charAt(i)==b.charAt(j))j++;  
             next[i+1]=j;  
         }  
-              
+        System.out.println("next : " + Arrays.toString(next));
         return next;  
     }  
     public static void search(String original, String find, int next[]) {  
@@ -82,6 +91,79 @@ public class KMP_Knuth_Morris_Pratt {
                 j++;  
             if (j == find.length()) {  
                 System.out.println("find at position " + (i - j + 1));  
+                System.out.println(original.subSequence(i - j + 1, i + 1));  
+                j = next[j];  
+            }  
+        }  
+    }
+    
+    //next表示长度为i的字符串前缀和后缀的最长公共部分，从0开始  
+    public static int[] getNext2(String b)  
+    {  
+        int len=b.length();  
+        int j= -1;  
+              
+        int next[]=new int[len];//next表示长度为i的字符串前缀和后缀的最长公共部分，从0开始  
+        next[0]=-1;  
+              
+        for(int i=0;i<len-1;i++)//i表示字符串的下标，从0开始  
+        {//j在每次循环开始都表示next[i]的值，同时也表示需要比较的下一个位置  
+            while(j>-1&&b.charAt(i)!=b.charAt(j))j=next[j];  
+            if(b.charAt(i+1) == b.charAt(j+1)){
+            	next[i+1]=next[++j];  
+            }else{
+            	next[i+1]=++j;
+            }
+        }  
+        System.out.println("next2 : " + Arrays.toString(next));
+        return next;  
+    }  
+    public static void search2(String original, String find, int next[]) {  
+        int j = 0;  
+        for (int i = 0; i < original.length(); i++) {  
+            while (j > -1 && original.charAt(i) != find.charAt(j))  
+                j = next[j];  
+            if (j == -1 || original.charAt(i) == find.charAt(j))  
+                j++;  
+            if (j == find.length()) {  
+                System.out.println("2 find at position " + (i - j + 1));  
+                System.out.println(original.subSequence(i - j + 1, i + 1));  
+                j = next[j];  
+            }  
+        }  
+    }
+    
+    //next表示长度为i的字符串前缀和后缀的最长公共部分，从0开始  
+    public static int[] getNext3(String b)  
+    {  
+        int len=b.length();  
+        int j= 0;  
+              
+        int next[]=new int[len];//next表示长度为i的字符串前缀和后缀的最长公共部分，从0开始  
+        if(len > 0){
+        	next[0]=0;
+        }  
+              
+        for(int i=1;i<len-1;i++)//i表示字符串的下标，从0开始  
+        {//j在每次循环开始都表示next[i]的值，同时也表示需要比较的下一个位置  
+            while(j>0 && b.charAt(i)!=b.charAt(j) )j=next[j-1];
+            if(b.charAt(i) == b.charAt(j)){
+            	j++;
+            }
+            next[i]=j;
+        }  
+        System.out.println("next3 : " + Arrays.toString(next));
+        return next;  
+    }  
+    public static void search3(String original, String find, int next[]) {  
+        int j = 0;  
+        for (int i = 0; i < original.length(); i++) {  
+            while (j > 0 && original.charAt(i) != find.charAt(j))  
+                j = next[j-1];  
+            if (original.charAt(i) == find.charAt(j))  
+                j++;  
+            if (j == find.length()) {  
+                System.out.println("3 find at position " + (i - j + 1));  
                 System.out.println(original.subSequence(i - j + 1, i + 1));  
                 j = next[j];  
             }  
